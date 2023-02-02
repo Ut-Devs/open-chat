@@ -1,5 +1,5 @@
-import { HOME } from "./Home";
+import { HOME } from './Home'
 
-const routes = [HOME];
+const routes = [HOME]
 
-export default routes;
+export default routes

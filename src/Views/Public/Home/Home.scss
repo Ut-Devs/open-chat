@@ -1,13 +1,13 @@
 .home {
-  display: grid;
-  place-items: center;
-  height: 100vh;
+	display: grid;
+	place-items: center;
+	height: 100vh;
 
-  & > * {
-    background-color: var(--color-primary);
-    padding-block: var(--spacing-md);
-    padding-inline: var(--spacing-xl);
-    border-radius: var(--spacing-xl);
-    text-decoration: none;
-  }
+	& > * {
+		background-color: var(--color-primary);
+		padding-block: var(--spacing-md);
+		padding-inline: var(--spacing-xl);
+		border-radius: var(--spacing-xl);
+		text-decoration: none;
+	}
 }

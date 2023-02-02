@@ -1,5 +1,5 @@
-import { CHAT } from "./Chat";
+import { CHAT } from './Chat'
 
-const routes = [CHAT];
+const routes = [CHAT]
 
-export default routes;
+export default routes
