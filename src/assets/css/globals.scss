@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap');
+@import "./reset.scss";
+
+:root{
+    --background-primary-dark: #1A1924;
+}
+body{
+    background-color: var(--background-primary-dark);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Poppins', sans-serif;
+}
