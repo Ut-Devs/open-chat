@@ -1,16 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap');
-@import './reset.scss';
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap';
+@import './reset';
 
 :root {
 	--background-primary-dark: #1a1924;
-
 	--color-primary: #f55050;
 	--color-secondary: #44cf6b;
-
 	--background-primary-light: #e2e8f0;
-
 	--text-color-primary: #fff;
-
 	--spacing-xxxs: 0.2rem;
 	--spacing-xxs: 0.4rem;
 	--spacing-xs: 0.8rem;
@@ -24,6 +20,7 @@
 	--spacing-xgiant: 7.2rem;
 	--spacing-xxgiant: 8rem;
 }
+
 body {
 	background-color: var(--background-primary-dark);
 	font-family: 'Open Sans', sans-serif;
@@ -40,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Poppins', sans-serif;
+	font-family: Poppins, sans-serif;
 }
 
 a {
