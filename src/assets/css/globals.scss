@@ -3,6 +3,27 @@
 
 :root{
     --background-primary-dark: #1A1924;
+
+    --color-primary: #F55050;
+    --color-secondary: #44CF6B;
+
+    --background-primary-light: #e2e8f0;
+
+
+    --text-color-primary: #fff;
+
+    --spacing-xxxs: 0.2rem;
+    --spacing-xxs: 0.4rem;
+    --spacing-xs: 0.8rem;
+    --spacing-sm: 1.6rem;
+    --spacing-md: 2.4rem;
+    --spacing-lg: 3.2rem;
+    --spacing-xl: 4rem;
+    --spacing-xxl: 4.8rem;
+    --spacing-xxxl: 5.6rem;
+    --spacing-giant: 6.4rem;
+    --spacing-xgiant: 7.2rem;
+    --spacing-xxgiant: 8rem;
 }
 body{
     background-color: var(--background-primary-dark);
