@@ -1,0 +1,41 @@
+.wrapper{
+  display: flex;
+  background-color: var(--background-primary-light);
+  grid-template-columns: 3fr 1fr;
+  border-radius: 10rem;
+  column-gap: var(--spacing-sm);
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-sm);
+  transition: outline .2s ease-in-out;
+  
+  &:focus-within {
+    outline: 0.3rem solid var(--color-secondary);
+  }
+
+  &__input {
+    flex: 1;
+    background: none;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    resize: none;
+    color: #000;
+
+    &:focus-within {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--text-color-primary);
+    }
+  }
+
+  &__button {
+    background: none;
+    border: none;
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+  }
+}

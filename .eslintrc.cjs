@@ -11,7 +11,7 @@ module.exports = {
 		'prettier',
 	],
 	overrides: [],
-	parser: ['@typescript-eslint/parser', 'vue-eslint-parser'],
+	parser: 'vue-eslint-parser',
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
@@ -23,5 +23,6 @@ module.exports = {
 		'linebreak-style': ['error', 'unix'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'never'],
+		'vue/multi-word-component-names': 'off',
 	},
 }

@@ -1,6 +1,6 @@
 {
   "*.scss": [
-    "stylelint --syntax scss --fix"
+    "stylelint scss --fix"
   ],
   "*.{js,jsx,ts,tsx,vue}": [
     "prettier --write"
