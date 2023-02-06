@@ -1,6 +1,3 @@
-import SendMessageInput from
-'./components/SendMessageInput/SendMessageInput.vue';
-
 <template>
 	<div class="chat">
 		<nav class="chat__header"></nav>

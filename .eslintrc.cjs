@@ -6,14 +6,20 @@ module.exports = {
 	},
 	extends: [
 		'eslint:recommended',
-		'plugin:vue/vue3-essential',
+		'plugin:vue/base',
 		'plugin:@typescript-eslint/recommended',
 		'prettier',
 	],
-	overrides: [],
-	parser: 'vue-eslint-parser',
+	overrides: [{
+		files: '*.ts',
+		parser: '@typescript-eslint/parser',
+	},
+	{
+		files: '*.vue',
+		parser: 'vue-eslint-parser'
+	}],
 	parserOptions: {
-		ecmaVersion: 'latest',
+		ecmaVersion: 2018,
 		sourceType: 'module',
 	},
 	plugins: ['vue', '@typescript-eslint'],
