@@ -16,10 +16,14 @@ module.exports = {
 	},
 	{
 		files: '*.vue',
-		parser: 'vue-eslint-parser'
+		extends: ['eslint:recommended'],
+		parser: 'vue-eslint-parser',
+		parserOptions: {
+			parser: '@typescript-eslint/parser'
+		} 
 	}],
 	parserOptions: {
-		ecmaVersion: 2018,
+		ecmaVersion: 2021,
 		sourceType: 'module',
 	},
 	plugins: ['vue', '@typescript-eslint'],
