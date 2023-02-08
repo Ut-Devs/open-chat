@@ -1,7 +1,30 @@
 .message{
     &__wrapper{
         &--sender{
-            color: red;
+            background-color: var(--color-primary);
+            border-radius: 1rem;
+            display: flex;
+            padding: 0.5rem;
+            margin: 2.5rem 1.5rem 2.5rem auto;
+            flex-direction: row-reverse;
+            max-width: calc(100% - 55%);
+            overflow-wrap: break-word;
+        }
+        &--sender span {
+            padding: 0.7rem;
+        }
+
+        &--recipient{
+            background-color: var(--color-secondary);
+            border-radius: 1rem;
+            display: flex;
+            padding: 0.5rem;
+            margin: 2.5rem auto 2.5rem 1.5rem;
+            max-width: calc(100% - 55%);
+            overflow-wrap: break-word;
+        }
+        &--recipient span {
+            padding: 0.7rem;
         }
     }
 }

@@ -1,5 +1,10 @@
 <template>
-	<div :class="[{ 'message__wrapper--sender': isSender }]">
+	<div
+		:class="[
+			{ 'message__wrapper--sender': isSender },
+			{ 'message__wrapper--recipient': !isSender },
+		]"
+	>
 		<span>{{ message.content }}</span>
 	</div>
 </template>
@@ -18,7 +23,11 @@ export default defineComponent({
 	},
 	computed: {
 		isSender() {
-			return this.message.sender === 13
+			if (this.message.sender === 13) {
+				return true
+			} else {
+				return false
+			}
 		},
 	},
 })
