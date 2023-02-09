@@ -1,30 +1,39 @@
 .message{
     &__wrapper{
+
+        margin: 2.5rem;
+
         &--sender{
-            background-color: var(--color-primary);
-            border-radius: 1rem;
+            max-width: 65%;
+            margin-left: auto;
             display: flex;
-            padding: 0.5rem;
-            margin: 2.5rem 1.5rem 2.5rem auto;
-            flex-direction: row-reverse;
-            max-width: calc(100% - 55%);
-            overflow-wrap: break-word;
-        }
-        &--sender span {
-            padding: 0.7rem;
+            flex-direction: column;
+            align-items: end;
+            margin-block: 2rem;
+            
+            &-content{
+                background-color: var(--color-primary);
+                border-radius: 1rem;
+                text-align: end;
+                padding: 1.2rem;
+                width: fit-content; 
+            }
+
         }
 
         &--recipient{
-            background-color: var(--color-secondary);
-            border-radius: 1rem;
+            max-width: 65%;
             display: flex;
-            padding: 0.5rem;
-            margin: 2.5rem auto 2.5rem 1.5rem;
-            max-width: calc(100% - 55%);
-            overflow-wrap: break-word;
-        }
-        &--recipient span {
-            padding: 0.7rem;
+            flex-direction: column;
+            align-items: start;
+            margin-block: 2rem;
+            
+            &-content{
+                background-color: var(--color-secondary);
+                border-radius: 1rem;
+                padding: 1.2rem;
+                width: fit-content;
+            }
         }
     }
 }
