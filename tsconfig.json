@@ -6,7 +6,7 @@
 		"moduleResolution": "Node",
 		"strict": true,
 		"jsx": "preserve",
-		"types": ["node"],
+		"types": ["node", "vite/client"],
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"esModuleInterop": true,
@@ -18,7 +18,8 @@
 			"@views/*": ["./src/Views/*"],
 			"@components/*": ["./src/components/*"],
 			"@router/*": ["./src/router/*"],
-			"@assets/*": ["./src/assets/*"]
+			"@assets/*": ["./src/assets/*"],
+			"@models/*": ["./src/models/*"]
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
