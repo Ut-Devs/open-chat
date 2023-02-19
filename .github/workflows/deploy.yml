@@ -19,11 +19,6 @@ jobs:
         run: |
           yarn install
           yarn build
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.REPO_TOKEN }}
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
