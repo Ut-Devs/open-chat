@@ -1,7 +1,39 @@
 .message{
     &__wrapper{
+
+        margin: 2.5rem;
+
         &--sender{
-            color: red;
+            max-width: 65%;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            margin-block: 2rem;
+            
+            &-content{
+                background-color: var(--color-primary);
+                border-radius: 1rem;
+                text-align: end;
+                padding: 1.2rem;
+                width: fit-content; 
+            }
+
+        }
+
+        &--recipient{
+            max-width: 65%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-block: 2rem;
+            
+            &-content{
+                background-color: var(--color-secondary);
+                border-radius: 1rem;
+                padding: 1.2rem;
+                width: fit-content;
+            }
         }
     }
 }
