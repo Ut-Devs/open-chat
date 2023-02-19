@@ -19,13 +19,14 @@ jobs:
         run: |
           yarn install
           yarn build
-      - name: Deploy
-        uses: s0/git-publish-subdir-action@develop
+      - name: Use secrets
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
           ref: main
           token: ${{ secrets.PAT }}
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
           BRANCH: master
