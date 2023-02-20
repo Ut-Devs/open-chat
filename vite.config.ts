@@ -34,4 +34,4 @@ export default defineConfig({
 			'@models': path.resolve(__dirname, './src/models'),
 		},
 	},
-})
+} as unknown)
