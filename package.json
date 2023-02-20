@@ -10,7 +10,7 @@
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
 		"format": "prettier .  --write",
 		"test": "vitest --passWithNoTests --run",
-		"coverage": "vitest run --coverage"
+		"coverage": "vitest run --passWithNoTests --coverage"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.3.0",
