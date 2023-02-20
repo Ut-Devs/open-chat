@@ -16,7 +16,7 @@ export default defineConfig({
 		environment: 'jsdom',
 	},
 	plugins: [vue(), eslintPlugin()],
-	base: process.env.NODE_ENV === 'production' ? '/open-chat/' : './',
+	base: './',
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, './src'),
