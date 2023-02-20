@@ -13,7 +13,7 @@
 		>
 			<span>{{ message.content }}</span>
 		</div>
-		<span>{{ date }}</span>
+		<span class="message__wrapper--date">{{ date }}</span>
 	</div>
 </template>
 
