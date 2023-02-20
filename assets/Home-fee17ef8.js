@@ -1,1 +1,0 @@
-import{_ as o,c as s,o as t,p as _,b as c,a}from"./index-55b45cd4.js";const d={},n=e=>(_("data-v-ddbef906"),e=e(),c(),e),r={class:"home"},p=n(()=>a("router-link",{to:"/chat"},"Go to Chat",-1)),f=[p];function i(e,h){return t(),s("main",r,f)}const m=o(d,[["render",i],["__scopeId","data-v-ddbef906"]]);export{m as default};
