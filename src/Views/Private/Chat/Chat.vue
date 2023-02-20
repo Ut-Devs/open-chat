@@ -37,7 +37,7 @@ export default defineComponent({
 				},
 				{
 					id: 2,
-					content: 'ojhashudhiasd',
+					content: 'qasda',
 					sendAt: new Date(),
 					recipient: 12,
 					sender: 13,
