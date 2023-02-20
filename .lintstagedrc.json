@@ -1,8 +1,5 @@
 {
-  "*.scss": [
-    "stylelint scss --fix"
-  ],
-  "*.{js,jsx,ts,tsx,vue}": [
-    "prettier --write"
-  ]
+	"*.scss": ["stylelint scss --fix"],
+	"*.{js,jsx,ts,tsx,vue}": ["prettier --write"],
+	"*.{js,ts, vue}": "vitest related --run"
 }
