@@ -1,7 +1,9 @@
 <template>
 	<div class="wrapper">
-		<textarea class="wrapper__input" />
-		<button class="wrapper__button">Send</button>
+		<textarea rows="1" placeholder="type something..." class="wrapper__input" />
+		<button class="wrapper__button">
+			<font-awesome-icon icon="fa-regular fa-paper-plane" />
+		</button>
 	</div>
 </template>
 

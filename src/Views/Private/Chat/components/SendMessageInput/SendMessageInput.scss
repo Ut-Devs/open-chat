@@ -1,15 +1,17 @@
 .wrapper{
   display: flex;
   background-color: var(--background-primary-light);
-  grid-template-columns: 3fr 1fr;
-  border-radius: 10rem;
   column-gap: var(--spacing-sm);
-  padding-left: var(--spacing-xl);
-  padding-right: var(--spacing-sm);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: var(--spacing-sm);
   transition: outline .2s ease-in-out;
+  padding-inline: var(--spacing-sm);
+  padding-block: var(--spacing-xs);
   
   &:focus-within {
-    outline: 0.3rem solid var(--color-secondary);
+    outline: 0.2rem solid var(--color-secondary);
   }
 
   &__input {
@@ -26,16 +28,21 @@
     }
 
     &::placeholder {
-      color: var(--text-color-primary);
+      color: var(--text-color-black);
     }
   }
 
   &__button {
-    background: none;
+    background-color: var(--color-primary);
+    padding: var(--spacing-xs);
+    border-radius: var(--spacing-xs);
     border: none;
+    color: white;
+    font-size: 2.5rem;
+    transition: .2s;
 
     &:hover {
-      background-color: var(--color-secondary);
+      background-color: var(--color-primary-darken);
     }
   }
 }
