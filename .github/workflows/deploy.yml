@@ -41,7 +41,7 @@ jobs:
           path: ./dist
   deploy:
     name: Deploy
-    needs: sonarcloud
+    needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
 
