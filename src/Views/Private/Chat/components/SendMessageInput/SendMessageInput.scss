@@ -1,6 +1,7 @@
 .wrapper{
   display: flex;
-  background-color: var(--background-primary-light);
+  background-color: var(--background-primary-dark);
+  filter: brightness(.8);
   column-gap: var(--spacing-sm);
   justify-content: space-between;
   align-items: center;
@@ -8,10 +9,10 @@
   border-radius: var(--spacing-sm);
   transition: outline .2s ease-in-out;
   padding-inline: var(--spacing-sm);
-  padding-block: var(--spacing-xs);
+  padding-block: var(--spacing-sm);
   
   &:focus-within {
-    outline: 0.2rem solid var(--color-secondary);
+    outline: 0.2rem solid var(--color-primary);
   }
 
   &__input {
@@ -19,11 +20,11 @@
     background: none;
     border: none;
     border-radius: 0.4rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     resize: none;
-    color: #000;
+    color: var(--text-color-primary);
 
-    &:focus-within {
+    &:focus {
       outline: none;
     }
 

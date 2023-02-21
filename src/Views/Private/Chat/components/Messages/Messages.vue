@@ -5,6 +5,12 @@
 			{ 'message__wrapper--recipient': !isSender },
 		]"
 	>
+		<div v-if="!isSender" class="message__wrapper__info">
+			<div class="message__wrapper__info--image">
+				<img src="https://picsum.photos/200" alt="user image" />
+			</div>
+			<span>Jhon Doe</span>
+		</div>
 		<div
 			:class="[
 				{ 'message__wrapper--sender-content': isSender },

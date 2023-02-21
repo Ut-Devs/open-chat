@@ -3,16 +3,19 @@
 	grid-template-rows: 1fr 7fr 1fr;
 	width: 100vw;
 	height: 100vh;
-	
-	&__form{
+
+	&__form {
 		display: grid;
 		place-items: center;
 		padding: var(--spacing-sm);
 	}
 
 	&__body {
-		background-color: var(--background-primary-dark);
 		padding-inline: 3rem;
-		filter: brightness(1.2);
+		overflow: scroll;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 }
