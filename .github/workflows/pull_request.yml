@@ -6,9 +6,6 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - master
-env:
-  # Setting an environment variable with the value of a configuration variable
-  env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
   pull_request_build:
@@ -31,6 +28,8 @@ jobs:
         run: yarn coverage
 
       - name: Get Pull Request Number
+        id: pr
+        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
