@@ -39,6 +39,13 @@ jobs:
           projectBaseDir: ./src
           args: >
             -Dsonar.pullrequest.key=${{ steps.pr.outputs.pull_request_number }}
+            -Dsonar.projectKey=Ut-Devs_open-chat
+            -Dsonar.organization=ut-devs
+            -Dsonar.sources=src/
+            -Dsonar.test.inclusions=**/*.spec.ts
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.pullrequest.base=master
+            -Dsonar.typescript.tsconfigPath=./tsconfig.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
