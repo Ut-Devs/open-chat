@@ -36,7 +36,6 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
-          projectBaseDir: ./src
           args: >
             -Dsonar.pullrequest.key=${{ steps.pr.outputs.pull_request_number }}
             -Dsonar.projectKey=Ut-Devs_open-chat
