@@ -7,6 +7,7 @@ on:
       - master
 
 jobs:
+  pull_request_build:
   name: Build
   runs-on: ubuntu-latest
 
