@@ -1,0 +1,49 @@
+name: Run build
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pull_request_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run tests
+        run: yarn coverage
+
+      - name: Get Pull Request Number
+        id: pr
+        run: echo ${{ github.event.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.pullrequest.key=${{ github.event.number }}
+            -Dsonar.projectKey=Ut-Devs_open-chat
+            -Dsonar.organization=ut-devs
+            -Dsonar.sources=src/
+            -Dsonar.test.inclusions=**/*.spec.ts
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.pullrequest.base=master
+            -Dsonar.typescript.tsconfigPath=./tsconfig.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Build project
+        run: yarn run build

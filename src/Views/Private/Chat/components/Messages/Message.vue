@@ -5,6 +5,12 @@
 			{ 'message__wrapper--recipient': !isSender },
 		]"
 	>
+		<div v-if="!isSender" class="message__wrapper__info">
+			<div class="message__wrapper__info--image">
+				<img src="https://picsum.photos/200" alt="user image" />
+			</div>
+			<span>Jhon Doe</span>
+		</div>
 		<div
 			:class="[
 				{ 'message__wrapper--sender-content': isSender },
@@ -32,11 +38,7 @@ export default defineComponent({
 	},
 	computed: {
 		isSender() {
-			if (this.message.sender === 13) {
-				return true
-			} else {
-				return false
-			}
+			return this.message.sender === 13
 		},
 		date() {
 			return getFormatedDate(this.message.sendAt)
@@ -45,4 +47,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss" src="./Messages.scss" />
+<style scoped lang="scss" src="./Message.scss" />

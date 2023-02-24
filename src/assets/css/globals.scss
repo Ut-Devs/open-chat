@@ -1,8 +1,10 @@
 @import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap';
 @import './reset';
+@import './mixins';
 
 :root {
 	--background-primary-dark: #1a1924;
+	--background-primary-darken: #14141d;
 	--color-primary: #f55050;
 	--color-primary-darken: #cf4343;
 	--color-secondary: #16a34a;
