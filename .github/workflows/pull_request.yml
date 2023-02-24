@@ -3,6 +3,7 @@ name: Run build
 on:
   push:
   pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - master
 
@@ -28,6 +29,8 @@ jobs:
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        args: >
+          -Dsonar.pullrequest.key=`if [ -z "${{github.event.number}}"  ]; then echo ${{github.sha}}; else echo ${{github.event.number}}; fi`
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
