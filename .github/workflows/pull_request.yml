@@ -1,6 +1,9 @@
 name: Run build
 
 on:
+  env:
+    # Setting an environment variable with the value of a configuration variable
+    env_var: ${{ vars.ENV_CONTEXT_VAR }}
   push:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -34,7 +37,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.pullrequest.key=`if [ -z "${{github.event.number}}"  ]; then echo ${{github.sha}}; else echo ${{github.event.number}}; fi`
+            -Dsonar.pullrequest.key=${{ vars.GITHUB_RUN_ID }}
 
       - name: Build project
         run: yarn run build
