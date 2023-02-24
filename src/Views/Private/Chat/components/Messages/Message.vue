@@ -38,11 +38,7 @@ export default defineComponent({
 	},
 	computed: {
 		isSender() {
-			if (this.message.sender === 13) {
-				return true
-			} else {
-				return false
-			}
+			return this.message.sender === 13
 		},
 		date() {
 			return getFormatedDate(this.message.sendAt)
@@ -51,4 +47,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss" src="./Messages.scss" />
+<style scoped lang="scss" src="./Message.scss" />

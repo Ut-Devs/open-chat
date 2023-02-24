@@ -1,63 +1,68 @@
 @import '@assets/css/globals';
 
-.header{
-  color: var(--text-color-primary);
+.header {
+	color: var(--text-color-primary);
 
-    &__wrapper{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      padding-block: var(--spacing-md);
-      font-size: 2rem;
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		padding-block: var(--spacing-md);
+		font-size: 1.6rem;
+		border: 2px solid #f00;
 
-      @include use(extra-small){
-        font-size: 1.6rem;
-      }
+		@include above(phone-portrait-up) {
+			max-width: 90%;
+			margin: 0 auto;
+		}
 
-      &--right{
-        display: flex;
-        column-gap: 2.5rem;
-        justify-content: space-evenly;
-        
-      }
+		@include above(extra-small) {
+			font-size: 2rem;
+		}
 
-      &--center{ 
-        display: flex;
-        flex-direction: row;
-        column-gap: 2rem;
-        align-items: center;
+		&--right {
+			display: flex;
+			column-gap: 2.5rem;
+			justify-content: space-evenly;
+		}
 
-        &__info{
-          display: flex;
-          flex-direction: column;
+		&--center {
+			display: flex;
+			flex-direction: row;
+			column-gap: 2rem;
+			align-items: center;
 
-          &--name{
-            font-size: 2rem;
-          }
+			&__info {
+				display: flex;
+				flex-direction: column;
 
-          &--status{
-            font-size: 1.5rem;
+				&--name {
+					font-size: 2rem;
+				}
 
-            &--icon{
-              font-size: 1rem;
-              color: var(--color-secondary);
-              margin-inline: 0.5rem;
-            }
-          }
-        }
+				&--status {
+					font-size: 1.5rem;
 
-        &__image  {
-          max-width: 4rem;
-          max-height: 4rem;
-          overflow: hidden;
-          object-fit: cover;
-          border-radius: 2.5rem;
+					&--icon {
+						font-size: 1rem;
+						color: var(--color-secondary);
+						margin-inline: 0.5rem;
+					}
+				}
+			}
 
-          & >img{
-            max-width: 5rem;
-          }
-      }
-      }
-    }
+			&__image {
+				max-width: 4rem;
+				max-height: 4rem;
+				overflow: hidden;
+				object-fit: cover;
+				border-radius: 2.5rem;
+
+				& > img {
+					max-width: 5rem;
+				}
+			}
+		}
+	}
 }

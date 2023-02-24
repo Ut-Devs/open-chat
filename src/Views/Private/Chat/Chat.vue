@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import Messages from './components/Messages/Messages.vue'
+import Messages from './components/Messages/Message.vue'
 import SendMessageInput from './components/SendMessageInput/SendMessageInput.vue'
 import ChatHeader from './components/ChatHeader/ChatHeader.vue'
 import { defineComponent } from 'vue'
