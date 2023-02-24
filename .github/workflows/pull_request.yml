@@ -4,12 +4,9 @@ on:
   push:
   pull_request:
     types: [opened, synchronize, reopened]
-    branches:
-      - master
 
 jobs:
   pull_request_build:
-    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +26,7 @@ jobs:
 
       - name: Get Pull Request Number
         id: pr
-        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+        run: echo ${{ github.event.number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -37,7 +34,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.pullrequest.key=${{ steps.pr.outputs.pull_request_number }}
+            -Dsonar.pullrequest.key=${{ github.event.number }}
             -Dsonar.projectKey=Ut-Devs_open-chat
             -Dsonar.organization=ut-devs
             -Dsonar.sources=src/
