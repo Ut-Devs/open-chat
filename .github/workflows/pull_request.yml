@@ -24,15 +24,15 @@ jobs:
         with:
           node-version: 16
 
-      - name: Get Pull Request Number
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Install dependencies
         run: yarn install
 
       - name: Run tests
         run: yarn coverage
+
+      - name: Get Pull Request Number
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
