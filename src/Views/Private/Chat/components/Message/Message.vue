@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { IMessage } from '@/models/Message.model'
+import { IMessage } from '@models/Message.model'
 import { getFormatedDate } from '@/helpers/date'
 
 export default defineComponent({
