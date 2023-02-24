@@ -4,6 +4,7 @@
 			{ 'message__wrapper--sender': isSender },
 			{ 'message__wrapper--recipient': !isSender },
 		]"
+		ref="message"
 	>
 		<div v-if="!isSender" class="message__wrapper__info">
 			<div class="message__wrapper__info--image">
@@ -36,9 +37,13 @@ export default defineComponent({
 			required: true,
 		},
 	},
+	mounted() {
+		const message = this.$refs.message as HTMLDivElement
+		message.scrollIntoView({ behavior: 'smooth' })
+	},
 	computed: {
 		isSender() {
-			return this.message.sender === 13
+			return this.message.sender === 1
 		},
 		date() {
 			return getFormatedDate(this.message.sendAt)

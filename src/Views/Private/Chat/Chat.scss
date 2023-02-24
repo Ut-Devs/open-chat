@@ -13,6 +13,7 @@
 	&__body {
 		padding-inline: 3rem;
 		overflow: scroll;
+		scroll-behavior: smooth;
 
 		&::-webkit-scrollbar {
 			display: none;

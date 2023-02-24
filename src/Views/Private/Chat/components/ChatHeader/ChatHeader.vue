@@ -1,7 +1,9 @@
 <template>
 	<nav class="header__wrapper">
 		<div class="header__wrapper--left">
-			<font-awesome-icon icon="fa-solid fa-chevron-left" />
+			<router-link to="contacts">
+				<font-awesome-icon icon="fa-solid fa-chevron-left" />
+			</router-link>
 		</div>
 		<div class="header__wrapper--center">
 			<div class="header__wrapper--center__image">

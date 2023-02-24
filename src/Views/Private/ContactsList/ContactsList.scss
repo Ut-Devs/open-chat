@@ -1,0 +1,7 @@
+.contacts-list {
+	&__body {
+		& > * {
+			margin: 1rem;
+		}
+	}
+}

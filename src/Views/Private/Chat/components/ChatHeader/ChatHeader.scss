@@ -10,7 +10,6 @@
 		align-items: center;
 		padding-block: var(--spacing-md);
 		font-size: 1.6rem;
-		border: 2px solid #f00;
 
 		@include above(phone-portrait-up) {
 			max-width: 90%;

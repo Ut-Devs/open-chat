@@ -28,6 +28,7 @@ export default defineConfig({
 			'@router': path.resolve(__dirname, './src/router'),
 			'@assets': path.resolve(__dirname, './src/assets'),
 			'@models': path.resolve(__dirname, './src/models'),
+			'@store': path.resolve(__dirname, './src/store'),
 		},
 	},
 } as VitestConfigExport)

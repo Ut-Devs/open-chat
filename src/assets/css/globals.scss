@@ -30,6 +30,11 @@ body {
 	font-size: 1.6rem;
 }
 
+span,
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
 body > * {
 	color: var(--text-color-primary);
 }

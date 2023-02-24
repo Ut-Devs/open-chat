@@ -20,7 +20,8 @@
 			"@components/*": ["./src/components/*"],
 			"@router/*": ["./src/router/*"],
 			"@assets/*": ["./src/assets/*"],
-			"@models/*": ["./src/models/*"]
+			"@models/*": ["./src/models/*"],
+			"@store/*": ["./src/store/*"]
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

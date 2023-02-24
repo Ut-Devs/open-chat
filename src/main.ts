@@ -5,6 +5,10 @@ import router from '@router/index'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 
+import { createPinia } from 'pinia'
+
+import { MotionPlugin } from '@vueuse/motion'
+
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -26,7 +30,11 @@ library.add(faChevronLeft)
 library.add(faEllipsisV)
 library.add(faCircle)
 
+const pinia = createPinia()
+
 createApp(App)
 	.component('font-awesome-icon', FontAwesomeIcon)
 	.use(router)
+	.use(pinia)
+	.use(MotionPlugin)
 	.mount('#app')
