@@ -1,14 +1,14 @@
 name: Run build
 
 on:
-  env:
-    # Setting an environment variable with the value of a configuration variable
-    env_var: ${{ vars.ENV_CONTEXT_VAR }}
   push:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
       - master
+env:
+  # Setting an environment variable with the value of a configuration variable
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
   pull_request_build:
