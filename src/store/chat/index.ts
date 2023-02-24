@@ -9,3 +9,12 @@ export const ChatStore = defineStore('chat', {
 		},
 	},
 })
+
+export const ScreenStore = defineStore('screen', {
+	state: () => ({ width: 0 }),
+	actions: {
+		setScreenSize(width: number) {
+			this.width = width
+		},
+	},
+})

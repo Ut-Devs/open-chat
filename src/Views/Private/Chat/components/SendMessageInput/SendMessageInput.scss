@@ -1,3 +1,5 @@
+@import '@assets/css/globals';
+
 .wrapper {
 	display: flex;
 	background-color: var(--background-primary-darken);
@@ -7,8 +9,13 @@
 	width: 100%;
 	border-radius: var(--spacing-sm);
 	transition: outline 0.2s ease-in-out;
-	padding-inline: var(--spacing-sm);
-	padding-block: var(--spacing-sm);
+	padding: var(--spacing-sm);
+	box-shadow: 0 10px 15px -3px rgb(167 167 167 / 10%);
+
+	@include above(phone-portrait-up) {
+		max-width: 98%;
+		border-radius: 1rem;
+	}
 
 	&:focus-within {
 		outline: 0.2rem solid var(--color-primary);
@@ -16,6 +23,7 @@
 
 	&__input {
 		flex: 1;
+		white-space: nowrap;
 		background: none;
 		border: none;
 		border-radius: 0.4rem;
@@ -40,6 +48,7 @@
 		color: white;
 		font-size: 2.5rem;
 		transition: 0.2s;
+		cursor: pointer;
 
 		&:hover {
 			background-color: var(--color-primary-darken);

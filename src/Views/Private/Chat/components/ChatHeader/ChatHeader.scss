@@ -10,14 +10,17 @@
 		align-items: center;
 		padding-block: var(--spacing-md);
 		font-size: 1.6rem;
+		background-color: var(--background-primary-darken);
+		max-width: 90%;
+		border-radius: 1rem;
+		margin: var(--spacing-sm) auto;
 
 		@include above(phone-portrait-up) {
-			max-width: 90%;
-			margin: 0 auto;
-		}
-
-		@include above(extra-small) {
+			max-width: 95%;
 			font-size: 2rem;
+			margin: var(--spacing-md) auto;
+			padding: var(--spacing-md);
+			justify-content: space-between;
 		}
 
 		&--right {

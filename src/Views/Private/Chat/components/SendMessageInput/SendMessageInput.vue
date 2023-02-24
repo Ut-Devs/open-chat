@@ -1,15 +1,15 @@
 <template>
-	<form ref="sendMessagesForm" class="wrapper">
+	<div ref="sendMessagesForm" class="wrapper">
 		<textarea
 			rows="1"
 			ref="input"
 			placeholder="type something..."
 			class="wrapper__input"
 		/>
-		<button type="submit" class="wrapper__button">
+		<button @click="sendMessage" class="wrapper__button">
 			<font-awesome-icon icon="fa-regular fa-paper-plane" />
 		</button>
-	</form>
+	</div>
 </template>
 
 <script lang="ts">
@@ -26,23 +26,25 @@ export default defineComponent({
 		}
 	},
 	mounted() {
-		const form = this.$refs.sendMessagesForm as HTMLFormElement
-		form.addEventListener('submit', (e) => {
-			e.preventDefault()
-			this.sendMessage()
+		const form = this.$refs.sendMessagesForm as HTMLDivElement
+		form.addEventListener('keypress', (e) => {
+			if (e.key === 'Enter' && !e.shiftKey) {
+				e.preventDefault()
+				this.sendMessage()
+			}
 		})
 	},
 	methods: {
 		sendMessage() {
+			console.log('send message')
 			const message = (this.$refs.input as HTMLTextAreaElement).value
-			!!message &&
-				this.chatStore.sendMessage({
-					id: Math.random(),
-					content: message,
-					sendAt: new Date(),
-					recipient: Math.random() > 0.5 ? 1 : 2,
-					sender: Math.random() > 0.5 ? 1 : 2,
-				})
+			this.chatStore.sendMessage({
+				id: Math.random(),
+				content: message,
+				sendAt: new Date(),
+				recipient: Math.random() > 0.5 ? 1 : 2,
+				sender: Math.random() > 0.5 ? 1 : 2,
+			})
 		},
 	},
 })

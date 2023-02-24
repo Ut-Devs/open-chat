@@ -1,6 +1,6 @@
 <template>
 	<nav class="header__wrapper">
-		<div class="header__wrapper--left">
+		<div v-if="isMobile" class="header__wrapper--left">
 			<router-link to="contacts">
 				<font-awesome-icon icon="fa-solid fa-chevron-left" />
 			</router-link>
@@ -32,6 +32,11 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
 	name: 'ChatHeader',
+	computed: {
+		isMobile() {
+			return window.innerWidth < 768
+		},
+	},
 })
 </script>
 

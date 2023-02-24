@@ -1,4 +1,13 @@
 .contacts-list {
+	height: 97.5vh;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	padding: var(--spacing-sm) 0;
+	overflow-y: scroll;
+
 	&__body {
 		& > * {
 			margin: 1rem;

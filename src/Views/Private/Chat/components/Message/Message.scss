@@ -43,6 +43,11 @@
 				text-align: end;
 				padding: 1.2rem;
 				width: fit-content;
+				white-space: pre-wrap;
+
+				& > * {
+					text-align: end;
+				}
 			}
 		}
 
@@ -60,6 +65,11 @@
 				width: fit-content;
 				margin-top: var(--spacing-sm);
 				margin-left: var(--spacing-xs);
+				white-space: pre-wrap;
+
+				& > * {
+					text-align: end;
+				}
 			}
 		}
 	}
