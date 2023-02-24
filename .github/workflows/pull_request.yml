@@ -30,5 +30,15 @@ jobs:
       - name: Run tests
         run: yarn coverage
 
+      - name: SonarCloud Scan
+        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.pullrequest.key= ${{ steps.pr.outputs.pull_request_number }}
+
       - name: Build project
         run: yarn run build
