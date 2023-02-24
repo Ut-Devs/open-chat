@@ -8,29 +8,29 @@ on:
 
 jobs:
   pull_request_build:
-  name: Build
-  runs-on: ubuntu-latest
+    name: Build
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-    - name: Install dependencies
-      run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-    - name: Run tests
-      run: yarn coverage
+      - name: Run tests
+        run: yarn coverage
 
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-    - name: Build project
-      run: yarn run build
+      - name: Build project
+        run: yarn run build
