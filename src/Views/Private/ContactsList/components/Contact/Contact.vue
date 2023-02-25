@@ -19,4 +19,4 @@
 	</router-link>
 </template>
 
-<style src="./Contact.scss" lang="scss" />
+<style src="./Contact.scss" lang="scss" scoped />

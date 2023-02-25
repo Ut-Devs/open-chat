@@ -77,4 +77,4 @@ export default defineComponent({
 })
 </script>
 
-<styles src="./Chat.scss" lang="scss" />
+<styles src="./Chat.scss" lang="scss" scoped />

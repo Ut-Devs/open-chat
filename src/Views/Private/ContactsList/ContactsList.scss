@@ -5,12 +5,16 @@
 		display: none;
 	}
 
-	padding: var(--spacing-sm) 0;
 	overflow-y: scroll;
 
 	&__body {
 		& > * {
 			margin: 1rem;
+			transition: scale 0.2s;
+
+			&:hover {
+				scale: 1.02;
+			}
 		}
 	}
 }

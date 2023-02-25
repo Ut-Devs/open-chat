@@ -20,6 +20,7 @@ import {
 	faEllipsisV,
 	faChevronLeft,
 	faCircle,
+	faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
@@ -29,6 +30,7 @@ library.add(faPhoneAlt)
 library.add(faChevronLeft)
 library.add(faEllipsisV)
 library.add(faCircle)
+library.add(faMagnifyingGlass)
 
 const pinia = createPinia()
 

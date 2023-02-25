@@ -6,7 +6,20 @@
 			placeholder="type something..."
 			class="wrapper__input"
 		/>
-		<button @click="sendMessage" class="wrapper__button">
+		<button
+			v-motion
+			:initial="{
+				scale: 1,
+			}"
+			:hovered="{
+				scale: 1.1,
+			}"
+			:enter="{
+				scale: 1,
+			}"
+			@click="sendMessage"
+			class="wrapper__button"
+		>
 			<font-awesome-icon icon="fa-regular fa-paper-plane" />
 		</button>
 	</div>

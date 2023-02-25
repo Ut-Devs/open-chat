@@ -1,10 +1,8 @@
 <template>
 	<div class="contacts-list">
-		<nav class="contacts-list__header">
-			<!-- <ContactsListHeader /> -->
-		</nav>
+		<ContactsListHeader />
 		<section class="contacts-list__body">
-			<template v-for="contact in contacts">
+			<template v-for="(contact, index) in contacts">
 				<Contact
 					v-motion
 					:initial="{
@@ -14,7 +12,11 @@
 					:enter="{
 						x: 0,
 						opacity: 1,
+						transition: {
+							delay: 100 * index,
+						},
 					}"
+					class="conatcts-list__body__contact"
 				/>
 			</template>
 		</section>
@@ -24,11 +26,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Contact from './components/Contact/Contact.vue'
+import ContactsListHeader from './components/ContactsListHeader/ContactsListHeader.vue'
 
 export default defineComponent({
 	name: 'ContactsList',
 	components: {
 		Contact,
+		ContactsListHeader,
 	},
 	data: () => ({
 		contacts: new Array(10),
@@ -36,4 +40,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" src="./ContactsList.scss" />
+<style lang="scss" src="./ContactsList.scss" scoped />

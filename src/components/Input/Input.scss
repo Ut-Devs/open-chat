@@ -1,0 +1,50 @@
+@import '@assets/css/globals';
+
+.input-wrapper {
+	position: relative;
+	border-radius: 1rem;
+	padding: 0 var(--spacing-md);
+	max-width: fit-content;
+	background: var(--background-primary-light);
+
+	& > label {
+		position: absolute;
+		top: var(--spacing-xs);
+		font-size: 1.5rem;
+		color: var(--color-primary);
+		bottom: 0;
+		left: var(--spacing-sm);
+		transition: 0.2s;
+		max-height: fit-content;
+	}
+
+	& > input {
+		border: none;
+		color: white;
+		max-width: 7rem;
+		padding: var(--spacing-xs);
+		margin-left: var(--spacing-xs);
+		border-radius: 0.7rem;
+		background: none;
+
+		&::placeholder {
+			color: white;
+		}
+	}
+
+	&:focus-within {
+		outline: var(--color-primary) solid 0.2rem;
+	}
+
+	& > input:focus {
+		outline: none;
+	}
+
+	&--not-empty &--float {
+		margin-top: -3.1rem;
+	}
+
+	& > input:focus + &--float {
+		margin-top: -3.1rem;
+	}
+}

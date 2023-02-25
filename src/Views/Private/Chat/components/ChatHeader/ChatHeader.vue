@@ -7,7 +7,7 @@
 		</div>
 		<div class="header__wrapper--center">
 			<div class="header__wrapper--center__image">
-				<img src="https://picsum.photos/200" alt="user image" />
+				<img lazy src="https://picsum.photos/200" alt="user image" />
 			</div>
 			<div class="header__wrapper--center__info">
 				<span class="header__wrapper--center__info--name">John Doe</span>
@@ -40,4 +40,4 @@ export default defineComponent({
 })
 </script>
 
-<styles src="./ChatHeader.scss" lang="scss" />
+<styles src="./ChatHeader.scss" lang="scss" scoped />
