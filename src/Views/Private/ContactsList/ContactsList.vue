@@ -5,6 +5,7 @@
 			<template v-for="(contact, index) in contacts">
 				<Contact
 					v-motion
+					@click="setSelectedContact(index)"
 					:initial="{
 						x: 100,
 						opacity: 0,
@@ -27,6 +28,7 @@
 import { defineComponent } from 'vue'
 import Contact from './components/Contact/Contact.vue'
 import ContactsListHeader from './components/ContactsListHeader/ContactsListHeader.vue'
+import { ChatStore } from '@/store/chat'
 
 export default defineComponent({
 	name: 'ContactsList',
@@ -34,9 +36,21 @@ export default defineComponent({
 		Contact,
 		ContactsListHeader,
 	},
+	setup() {
+		const chatStore = ChatStore()
+
+		return {
+			chatStore,
+		}
+	},
 	data: () => ({
 		contacts: new Array(10),
 	}),
+	methods: {
+		setSelectedContact(contact: number) {
+			this.chatStore.setSelectedContact(contact)
+		},
+	},
 })
 </script>
 

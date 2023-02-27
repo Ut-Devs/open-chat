@@ -24,13 +24,17 @@
 
 	&__input {
 		flex: 1;
-		white-space: nowrap;
 		background: none;
 		border: none;
 		border-radius: 0.4rem;
 		font-size: 1.6rem;
 		resize: none;
+		overflow-x: hidden;
 		color: var(--text-color-primary);
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 
 		&:focus {
 			outline: none;

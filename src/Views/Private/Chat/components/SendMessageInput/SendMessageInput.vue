@@ -1,5 +1,5 @@
 <template>
-	<div ref="sendMessagesForm" class="wrapper">
+	<div class="wrapper">
 		<textarea
 			rows="1"
 			ref="input"
@@ -39,17 +39,16 @@ export default defineComponent({
 		}
 	},
 	mounted() {
-		const form = this.$refs.sendMessagesForm as HTMLDivElement
+		const form = this.$refs.input as HTMLTextAreaElement
 		form.addEventListener('keypress', (e) => {
 			if (e.key === 'Enter' && !e.shiftKey) {
 				e.preventDefault()
-				this.sendMessage()
+				!!form.value && this.sendMessage()
 			}
 		})
 	},
 	methods: {
 		sendMessage() {
-			console.log('send message')
 			const message = (this.$refs.input as HTMLTextAreaElement).value
 			this.chatStore.sendMessage({
 				id: Math.random(),
@@ -58,6 +57,8 @@ export default defineComponent({
 				recipient: Math.random() > 0.5 ? 1 : 2,
 				sender: Math.random() > 0.5 ? 1 : 2,
 			})
+			const form = this.$refs.input as HTMLTextAreaElement
+			form.value = ''
 		},
 	},
 })

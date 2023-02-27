@@ -14,6 +14,7 @@
 						opacity: 1,
 					}"
 				/>
+				{{ selectedContact }}
 			</nav>
 			<section class="chat__body">
 				<template v-for="message in messages">
@@ -68,10 +69,13 @@ export default defineComponent({
 	},
 	computed: {
 		messages(): IMessage[] {
-			return this.chatStore.messages
+			return this.chatStore.getMessages
 		},
 		isMobile(): boolean {
 			return screen.width < 768
+		},
+		selectedContact(): number | null {
+			return this.chatStore.getSelectedContact
 		},
 	},
 })
