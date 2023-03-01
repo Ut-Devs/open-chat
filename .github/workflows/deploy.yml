@@ -25,6 +25,12 @@ jobs:
       - name: Run tests
         run: yarn coverage
 
+      - name: Get Pull Request Number
+        id: pr
+        run: echo ${{ github.event.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
