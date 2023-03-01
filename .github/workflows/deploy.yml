@@ -27,8 +27,6 @@ jobs:
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
-              - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
         with:
           args: >
             -Dsonar.pullrequest.key=${{ github.event.number }}
