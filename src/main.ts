@@ -26,7 +26,7 @@ import {
 import SocketIO from 'socket.io-client'
 import VueSocketIO from 'vue-3-socket.io'
 
-const socketConnection = SocketIO('ws://open-chat-services.herokuapp.com/')
+const socketConnection = SocketIO('https://open-chat-services.herokuapp.com/')
 
 const socket = new VueSocketIO({
 	debug: true,
