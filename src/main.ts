@@ -23,6 +23,16 @@ import {
 	faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons'
 
+import SocketIO from 'socket.io-client'
+import VueSocketIO from 'vue-3-socket.io'
+
+const socketConnection = SocketIO('http://localhost:5000')
+
+const socket = new VueSocketIO({
+	debug: true,
+	connection: socketConnection,
+})
+
 /* add icons to the library */
 library.add(faPaperPlane)
 library.add(faVideo)
@@ -36,6 +46,8 @@ const pinia = createPinia()
 
 createApp(App)
 	.component('font-awesome-icon', FontAwesomeIcon)
+	.provide('$socket', socket)
+	.use(socket)
 	.use(router)
 	.use(pinia)
 	.use(MotionPlugin)

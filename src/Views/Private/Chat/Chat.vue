@@ -45,6 +45,7 @@ import SendMessageInput from './components/SendMessageInput/SendMessageInput.vue
 import ChatHeader from './components/ChatHeader/ChatHeader.vue'
 import { defineComponent } from 'vue'
 import { ChatStore } from '@store/chat'
+import { UserStore } from '@/store/user'
 import { IMessage } from '@models/Message.model'
 import ContactsList from '../ContactsList/ContactsList.vue'
 
@@ -57,14 +58,25 @@ export default defineComponent({
 	},
 	setup() {
 		const chatStore = ChatStore()
+		const userStore = UserStore()
 
 		return {
 			chatStore,
+			userStore,
 		}
 	},
-	watch: {
-		messages(oldMessages, newMessages) {
-			console.log(this.chatStore.messages, oldMessages, newMessages)
+	sockets: {
+		connect: function () {
+			console.log('socket connected')
+		},
+		session: function (session: { id: string }) {
+			this.userStore.setSessionId(session.id)
+			console.log('session', this.userStore.getSessionId)
+		},
+
+		messageReceived(message: IMessage) {
+			console.log('message received', message)
+			this.chatStore.sendMessage(message)
 		},
 	},
 	computed: {

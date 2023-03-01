@@ -1,21 +1,25 @@
-import Messages from '../Message.vue'
+import Message from '../Message.vue'
 
 import { describe, it, expect, vi } from 'vitest'
+import { createTestingPinia } from '@pinia/testing'
 
 import { mount } from '@vue/test-utils'
 
 describe('Messages.vue', () => {
 	window.HTMLElement.prototype.scrollIntoView = vi.fn()
 	it('Should render Messages component properly', async () => {
-		const wrapper = mount(Messages, {
+		const wrapper = mount(Message, {
 			props: {
 				message: {
-					id: 1,
+					id: '',
 					content: 'string',
 					sendAt: new Date(),
-					recipient: 2,
-					sender: 1,
+					recipient: 'asdasdas',
+					sender: '',
 				},
+			},
+			global: {
+				plugins: [createTestingPinia()],
 			},
 		})
 		expect(wrapper.exists()).toBeTruthy()

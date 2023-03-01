@@ -28,6 +28,7 @@
 import { defineComponent, PropType } from 'vue'
 import { IMessage } from '@models/Message.model'
 import { getFormatedDate } from '@/helpers/date'
+import { UserStore } from '@/store/user'
 
 export default defineComponent({
 	name: 'Messages',
@@ -37,16 +38,23 @@ export default defineComponent({
 			required: true,
 		},
 	},
+	setup() {
+		const userStore = UserStore()
+
+		return {
+			userStore,
+		}
+	},
 	mounted() {
 		const message = this.$refs.message as HTMLDivElement
 		message.scrollIntoView({ behavior: 'smooth' })
 	},
 	computed: {
 		isSender() {
-			return this.message.sender === 1
+			return this.message.sender === this.userStore.getSessionId
 		},
 		date() {
-			return getFormatedDate(this.message.sendAt)
+			return getFormatedDate(new Date(this.message.sendAt))
 		},
 	},
 })
