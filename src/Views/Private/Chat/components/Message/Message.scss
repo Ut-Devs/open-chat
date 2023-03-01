@@ -39,10 +39,17 @@
 
 			&-content {
 				background-color: var(--color-primary);
+				max-width: 60rem;
 				border-radius: 1rem 0 1rem 1rem;
 				text-align: end;
 				padding: 1.2rem;
 				width: fit-content;
+				white-space: pre-wrap;
+
+				& > * {
+					text-align: end;
+					word-wrap: break-word;
+				}
 			}
 		}
 
@@ -60,6 +67,13 @@
 				width: fit-content;
 				margin-top: var(--spacing-sm);
 				margin-left: var(--spacing-xs);
+				white-space: pre-wrap;
+				max-width: 60rem;
+
+				& > * {
+					text-align: end;
+					word-wrap: break-word;
+				}
 			}
 		}
 	}

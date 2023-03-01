@@ -5,10 +5,10 @@
 :root {
 	--background-primary-dark: #1a1924;
 	--background-primary-darken: #14141d;
+	--background-primary-light: #353346;
 	--color-primary: #f55050;
 	--color-primary-darken: #cf4343;
 	--color-secondary: #16a34a;
-	--background-primary-light: #ebeff3;
 	--text-color-primary: #fff;
 	--spacing-xxxs: 0.2rem;
 	--spacing-xxs: 0.4rem;
@@ -28,6 +28,11 @@ body {
 	background-color: var(--background-primary-dark);
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.6rem;
+}
+
+span,
+p {
+	font-family: 'Open Sans', sans-serif;
 }
 
 body > * {

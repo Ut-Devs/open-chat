@@ -1,3 +1,5 @@
+@import '@assets/css/globals';
+
 .wrapper {
 	display: flex;
 	background-color: var(--background-primary-darken);
@@ -7,8 +9,14 @@
 	width: 100%;
 	border-radius: var(--spacing-sm);
 	transition: outline 0.2s ease-in-out;
-	padding-inline: var(--spacing-sm);
-	padding-block: var(--spacing-sm);
+	padding: var(--spacing-sm);
+	box-shadow: 0 10px 15px -3px rgb(167 167 167 / 10%);
+
+	@include above(phone-portrait-up) {
+		max-width: 98%;
+		border-radius: 1rem;
+		padding: var(--spacing-sm) var(--spacing-lg);
+	}
 
 	&:focus-within {
 		outline: 0.2rem solid var(--color-primary);
@@ -21,7 +29,12 @@
 		border-radius: 0.4rem;
 		font-size: 1.6rem;
 		resize: none;
+		overflow-x: hidden;
 		color: var(--text-color-primary);
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 
 		&:focus {
 			outline: none;
@@ -40,9 +53,6 @@
 		color: white;
 		font-size: 2.5rem;
 		transition: 0.2s;
-
-		&:hover {
-			background-color: var(--color-primary-darken);
-		}
+		cursor: pointer;
 	}
 }

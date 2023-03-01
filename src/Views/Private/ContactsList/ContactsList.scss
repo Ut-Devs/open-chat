@@ -1,0 +1,20 @@
+.contacts-list {
+	height: 97.5vh;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	overflow-y: scroll;
+
+	&__body {
+		& > * {
+			margin: 1rem;
+			transition: scale 0.2s;
+
+			&:hover {
+				scale: 1.02;
+			}
+		}
+	}
+}

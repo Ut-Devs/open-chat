@@ -4,6 +4,7 @@
 			{ 'message__wrapper--sender': isSender },
 			{ 'message__wrapper--recipient': !isSender },
 		]"
+		ref="message"
 	>
 		<div v-if="!isSender" class="message__wrapper__info">
 			<div class="message__wrapper__info--image">
@@ -25,8 +26,9 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { IMessage } from '@/models/Message.model'
+import { IMessage } from '@models/Message.model'
 import { getFormatedDate } from '@/helpers/date'
+import { UserStore } from '@/store/user'
 
 export default defineComponent({
 	name: 'Messages',
@@ -36,12 +38,23 @@ export default defineComponent({
 			required: true,
 		},
 	},
+	setup() {
+		const userStore = UserStore()
+
+		return {
+			userStore,
+		}
+	},
+	mounted() {
+		const message = this.$refs.message as HTMLDivElement
+		message.scrollIntoView({ behavior: 'smooth' })
+	},
 	computed: {
 		isSender() {
-			return this.message.sender === 13
+			return this.message.sender === this.userStore.getSessionId
 		},
 		date() {
-			return getFormatedDate(this.message.sendAt)
+			return getFormatedDate(new Date(this.message.sendAt))
 		},
 	},
 })
