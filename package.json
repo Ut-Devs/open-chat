@@ -2,6 +2,7 @@
 	"name": "open-chat-app",
 	"private": true,
 	"version": "0.0.0",
+	"homepage": "https://ut-devs.github.io/open-chat/",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
