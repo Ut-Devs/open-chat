@@ -18,6 +18,10 @@ export default defineConfig({
 			reporter: ['text', 'lcov'],
 		},
 	},
+	publicPath:
+		process.env.NODE_ENV === 'production'
+			? '/my-project/' // note the trailing slash
+			: '/',
 	plugins: [vue(), eslintPlugin()],
 	base: './',
 	resolve: {
